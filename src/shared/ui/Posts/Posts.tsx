@@ -4,7 +4,7 @@ import React from "react";
 import PostCard from "@/src/shared/ui/PostCard/PostCard";
 import { IPost } from "@/src/entities/Post/model/types/types";
 
-const getData = async (): Promise<IPost> => {
+const getData = async () => {
   const res = await fetch(`${BASE_URL}/posts?page=1&limit=10`, {
     cache: "no-store",
     next: {
@@ -20,10 +20,12 @@ const getData = async (): Promise<IPost> => {
 };
 
 const Posts = async () => {
-  const data: IPost = await getData();
+  const data = await getData();
   return (
     <div className={styles.posts}>
-      {data?.results?.map((post) => <PostCard key={post._id} data={post} />)}
+      {data?.results?.map((post: IPost) => (
+        <PostCard key={post._id} data={post} />
+      ))}
     </div>
   );
 };

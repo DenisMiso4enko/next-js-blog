@@ -8,4 +8,6 @@ export interface IPost {
   views?: number;
   tags: string[];
   _id?: string;
+  createdAt?: string;
+  updatedAt?: string;
 }

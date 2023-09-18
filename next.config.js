@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    domains: [
+      "cdn-icons-png.flaticon.com",
+      "assets.vogue.com",
+      "m.media-amazon.com",
+      "upload.wikimedia.org",
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
