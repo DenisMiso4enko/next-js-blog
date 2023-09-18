@@ -1,0 +1,32 @@
+.tagInput {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 16px;
+    padding: 4px 8px;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.tagRemove {
+    cursor: pointer;
+    margin-left: 4px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
+}
