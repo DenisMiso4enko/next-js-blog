@@ -5,7 +5,7 @@ export interface IPost {
   description: string;
   text: string;
   image: string;
-  views: number;
+  views?: number;
   tags: string[];
   _id?: string;
 }

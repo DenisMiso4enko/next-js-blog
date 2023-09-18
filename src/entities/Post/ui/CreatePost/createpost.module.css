@@ -1,0 +1,44 @@
+.CreatePost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 40px;
+}
+
+.form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.textarea {
+    font-family: "Inter", sans-serif;
+    width: 100%;
+
+    border: 1px solid #F2F2F2;
+    outline: none;
+
+    padding: 12px 16px;
+    border-radius: var(--radius-8);
+    background: #F2F2F2;
+
+    font-size: var(--input-font);
+
+    resize: none;
+
+    transition: all .2s ease;
+}
+
+.textarea::placeholder {
+    color: #828282;
+}
+
+.textarea:hover, .input:focus {
+    border: 1px solid #269AD4;
+    outline: 2px solid #D4EBF6;
+}

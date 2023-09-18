@@ -6,7 +6,8 @@ interface TagsInputProps {
   onChangeTags: (tags: any) => void;
 }
 
-const TagsInput = ({ tags, onChangeTags }: TagsInputProps) => {
+const TagsInput = (props: TagsInputProps) => {
+  const { tags, onChangeTags } = props;
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -42,11 +43,12 @@ const TagsInput = ({ tags, onChangeTags }: TagsInputProps) => {
         ))}
       </div>
       <input
+        className={styles.input}
         type="text"
         value={inputValue}
         onChange={handleInputChange}
         onKeyPress={handleInputKeyPress}
-        placeholder="Введите тег и нажмите Enter"
+        placeholder="Enter tag..."
       />
     </div>
   );

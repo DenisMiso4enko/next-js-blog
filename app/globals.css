@@ -1,4 +1,15 @@
- * {
+:root {
+    --color-blue: #007bff;
+    --color-blue-light: #0090ff;
+
+    --radius-8: 8px;
+
+
+    --input-font: 20px;
+}
+
+
+* {
    margin: 0;
    padding: 0;
    box-sizing: border-box;

@@ -1,12 +1,30 @@
 .tagInput {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    width: 300px;
-    border: 1px solid #ccc;
-    padding: 8px;
-    border-radius: 4px;
+    border: 1px solid #F2F2F2;
+    padding: 12px 16px;
+    border-radius: var(--radius-8);
+    background: #F2F2F2;
 }
+
+.tagInput:hover, .tagInput:focus {
+    border: 1px solid #269AD4;
+    outline: 2px solid #D4EBF6;
+}
+
+.input {
+    font-size: var(--input-font);
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.input::placeholder {
+    color: #828282;
+}
+
 
 .tags {
     display: flex;
@@ -14,9 +32,9 @@
 }
 
 .tag {
-    background-color: #007bff;
+    background-color: var(--color-blue);
     color: #fff;
-    border-radius: 16px;
+    border-radius: var(--radius-8);
     padding: 4px 8px;
     margin: 4px;
     display: flex;

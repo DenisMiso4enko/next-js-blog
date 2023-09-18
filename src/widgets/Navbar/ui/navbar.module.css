@@ -6,7 +6,7 @@
 
 .user {
   color: white;
-  background: blue;
+  background: var(--color-blue);
   border-radius: 50%;
   padding: 8px 7px;
   text-align: center;
