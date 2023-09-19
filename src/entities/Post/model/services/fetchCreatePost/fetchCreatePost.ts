@@ -1,21 +1,14 @@
-import { BASE_URL } from "@/src/constance";
-import { IPost } from "@/src/entities/Post/model/types/types";
+import { IPost } from "@/src/entities/Post/model/types/post";
 import { revalidateTag } from "next/cache";
+import { httpRequest } from "@/src/shared/api/httpRequest";
 
-export const fetchCreatePost = async (fields: IPost): Promise<IPost> => {
-  const res = await fetch(`${BASE_URL}/posts/create`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(fields),
-  });
+export const fetchCreatePost = async (fields: IPost) => {
+  const res = await httpRequest("posts/create", "POST", fields);
 
   if (res.status === 201) {
     return await res.json();
   }
+  // настроить обработку ошибок
 
   revalidateTag("posts");
-
-  // настроить обработку ошибок
 };

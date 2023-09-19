@@ -1,13 +1,15 @@
 :root {
     --color-blue: #007bff;
     --color-blue-light: #0090ff;
+    --color-blue-500: #269AD4;
+    --color-blue-700: #D4EBF6;
+    --color-gray: #808080FF;
+    --color-red: #ec0b0b;
 
     --radius-8: 8px;
 
-
     --input-font: 20px;
 }
-
 
 * {
    margin: 0;

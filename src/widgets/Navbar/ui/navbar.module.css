@@ -11,3 +11,9 @@
   padding: 8px 7px;
   text-align: center;
 }
+
+.linkIcon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

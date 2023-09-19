@@ -1,0 +1,17 @@
+.tag {
+    background-color: var(--color-blue);
+    color: #fff;
+    border-radius: var(--radius-8);
+    padding: 4px 8px;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.tagRemove {
+    cursor: pointer;
+    margin-left: 4px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1;
+}

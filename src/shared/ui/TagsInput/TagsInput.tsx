@@ -1,5 +1,6 @@
 import styles from "./tagsInput.module.css";
 import { ChangeEvent, KeyboardEvent, useState } from "react";
+import Tag from "@/src/shared/ui/Tag/Tag";
 
 interface TagsInputProps {
   tags: string[];
@@ -31,15 +32,7 @@ const TagsInput = (props: TagsInputProps) => {
     <div className={styles.tagInput}>
       <div className={styles.tags}>
         {tags.map((tag, index) => (
-          <div className={styles.tag} key={index}>
-            {tag}
-            <span
-              className={styles.tagRemove}
-              onClick={() => handleTagRemove(tag)}
-            >
-              &times;
-            </span>
-          </div>
+          <Tag key={index} tag={tag} onChange={handleTagRemove} />
         ))}
       </div>
       <input

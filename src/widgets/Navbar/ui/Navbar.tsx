@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
+import { FiLogIn } from "react-icons/fi";
 import styles from "./navbar.module.css";
 
 const linksData = [
@@ -31,7 +32,9 @@ export const Navbar = () => {
           UU
         </Link>
       ) : (
-        <Link href={"/api/auth/signin"}>Sign In</Link>
+        <Link href={"/api/auth/signin"} className={styles.linkIcon}>
+          Login <FiLogIn />
+        </Link>
       )}
     </nav>
   );

@@ -2,7 +2,7 @@ import { fetchCreatePost } from "@/src/entities/Post/model/services/fetchCreateP
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
-import { IPost } from "@/src/entities/Post/model/types/types";
+import { IPost } from "@/src/entities/Post/model/types/post";
 
 export const useCreatePost = () => {
   const router = useRouter();

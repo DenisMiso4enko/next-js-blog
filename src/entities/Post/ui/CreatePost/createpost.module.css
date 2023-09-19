@@ -35,10 +35,10 @@
 }
 
 .textarea::placeholder {
-    color: #828282;
+    color: var(--color-gray);
 }
 
 .textarea:hover, .input:focus {
-    border: 1px solid #269AD4;
-    outline: 2px solid #D4EBF6;
+    border: 1px solid var(--color-blue-500);
+    outline: 2px solid var(--color-blue-700);
 }
