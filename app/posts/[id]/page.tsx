@@ -1,8 +1,5 @@
-import styles from "./page.module.css";
-import { BASE_URL } from "@/src/constance";
-
 const getData = async (id: string) => {
-  const res = await fetch(`${BASE_URL}/posts/getOne/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     cache: "no-store",
   });
 
