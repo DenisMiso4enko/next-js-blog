@@ -2,7 +2,7 @@ import "./globals.css";
 import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { AuthProvider } from "@/app/Proveder";
+import { Providers } from "@/app/Proveders";
 import Header from "@/src/shared/ui/Header/Header";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,10 +16,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>
+        <Providers>
           <Header />
           <div className="container">{children}</div>
-        </AuthProvider>
+        </Providers>
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 "use client";
 import { useSession, signOut } from "next-auth/react";
+import {Metadata} from "next";
 
 const Profile = () => {
   const session = useSession();
