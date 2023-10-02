@@ -1,9 +1,9 @@
 import styles from "./pagination.module.css";
 import Link from "next/link";
 
-const Pagination = ({currentPage, totalPages, next}: any) => {
+const Pagination = ({ currentPage, totalPages, next, query }: any) => {
   // // вариант через ссылки
-  const pages = Array.from({length: totalPages}, (_, i) => i + 1);
+  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   const pageNumbers: Array<number | string> = [];
 
@@ -41,39 +41,26 @@ const Pagination = ({currentPage, totalPages, next}: any) => {
     return pageNumbers;
   };
 
+  // href={`/?page=${page}&search=${query}`}
+
   return (
     <div className={styles.container}>
       {getPageNumbers().map((page) => (
-        <Link key={page} href={`/?page=${page}`}>
+        <Link
+          key={page}
+          href={{
+            pathname: "/",
+            query: {
+              page: page,
+              search: query,
+            },
+          }}
+        >
           {page}
         </Link>
       ))}
     </div>
   );
-
-  // Вариант через кнопки и роут
-  // const router = useRouter();
-  // const isPrevDisabled = currentPage === 1
-  // const isNextDisabled = next === undefined;
-  // return (
-  //   <div className={styles.container}>
-  //     <button
-  //       className={styles.button}
-  //       disabled={isPrevDisabled}
-  //       onClick={() => router.push(`?page=${currentPage - 1}`)}
-  //     >
-  //       Prev
-  //     </button>
-  //     {currentPage}
-  //     <button
-  //       className={styles.button}
-  //       disabled={isNextDisabled}
-  //       onClick={() => router.push(`?page=${currentPage + 1}`)}
-  //     >
-  //       Next
-  //     </button>
-  //   </div>
-  // );
 };
 
 export default Pagination;

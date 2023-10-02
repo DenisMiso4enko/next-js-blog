@@ -2,23 +2,37 @@
 import { useGlobalContext } from "@/app/Context/store";
 import styles from "./sidebar.module.css";
 import Input from "@/src/shared/ui/Input/Input";
+import React, { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useDebounce } from "use-debounce";
 
-export const Sidebar = () => {
-  // const [search, setSearch] = useState("");
-  const { search, setSearch } = useGlobalContext();
-  const onSearchHandle = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(search);
-  };
+export const Sidebar = ({ search: searchQuery }: { search?: string }) => {
+  const [text, setText] = useState(searchQuery);
+  const router = useRouter();
+  const [query] = useDebounce(text, 700);
+  const initialRender = useRef(true);
+
+  useEffect(() => {
+    if (initialRender.current) {
+      initialRender.current = false;
+      return;
+    }
+
+    if (!query) {
+      router.push("/");
+    } else {
+      router.push(`/?search=${query}`);
+    }
+  }, [query, router]);
 
   return (
     <div className={styles.container}>
       <div className={styles.sidebar}>
-        <form onSubmit={onSearchHandle}>
+        <form>
           <Input
             type={"text"}
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
             placeholder={"Search post..."}
           />
         </form>
