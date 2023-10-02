@@ -9,7 +9,7 @@ interface PostCardProps {
   data: IPost;
 }
 
-// тест
+
 
 const PostCard = ({ data }: PostCardProps) => {
   return (
