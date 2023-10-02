@@ -1,17 +1,15 @@
-import { CreatePost } from "@/src/entities/Post";
+import {CreatePost} from "@/src/entities/Post";
 import {Metadata} from "next";
 
 export const metadata: Metadata = {
-  title: "Create New Post",
-  description: "Create New Post",
+    title: "Create New Post",
+    description: "Create New Post",
 };
 
 const Create = () => {
-  return (
-    <>
-      <CreatePost />
-    </>
-  );
+    return (
+        <CreatePost/>
+    );
 };
 
 export default Create;

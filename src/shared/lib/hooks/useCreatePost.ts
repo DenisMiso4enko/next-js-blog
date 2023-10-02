@@ -1,8 +1,8 @@
-import {fetchCreatePost} from "@/src/entities/Post/model/services/fetchCreatePost/fetchCreatePost";
-import {useSession} from "next-auth/react";
-import {useRouter} from "next/navigation";
-import {FormEvent, useState} from "react";
-import {IPost} from "@/src/entities/Post/model/types/post";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { FormEvent, useState } from "react";
+import { IPost } from "@/src/entities/Post/model/types/post";
+import { httpRequestPost } from "@/src/shared/api/httpRequest";
 
 export const useCreatePost = () => {
   const router = useRouter();
@@ -15,32 +15,20 @@ export const useCreatePost = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const fields: IPost = {
+      title,
+      text,
+      description,
+      tags,
+      image,
+      userId: session?.data?.user?.email!,
+      userName: session?.data?.user?.name!,
+    };
     try {
-      const fields: IPost = {
-        title,
-        text,
-        description,
-        tags,
-        image,
-        userId: session?.data?.user?.email!,
-        userName: session?.data?.user?.name!,
-      };
-      const res = await fetch("/api/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify(fields),
-      })
-      if (res.status !== 200) {
-        throw Error("error create post")
-      }
-      const data = await res.json()
-      if (data) {
-        router.push(`/posts/${data._id}`);
-      }
-    } catch (e) {
-      console.log(e)
+      const response = await httpRequestPost("/api/create", "POST", fields);
+      router.push(`/posts/${response._id}`);
+    } catch (error) {
+      console.error("Request failed:", error);
     }
   };
 

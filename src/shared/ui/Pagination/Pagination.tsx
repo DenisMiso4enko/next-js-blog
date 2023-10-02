@@ -1,12 +1,7 @@
-import styles from "./pagination.module.css";
+import "./pagination.css";
 import Link from "next/link";
 
-const Pagination = ({currentPage, totalPages, next}: any) => {
-  // // вариант через ссылки
-  const pages = Array.from({length: totalPages}, (_, i) => i + 1);
-
-  const pageNumbers: Array<number | string> = [];
-
+const Pagination = ({ currentPage, totalPages, next }: any) => {
   const getPageNumbers = (): Array<number | string> => {
     const pageNumbers: Array<number | string> = [];
 
@@ -41,39 +36,23 @@ const Pagination = ({currentPage, totalPages, next}: any) => {
     return pageNumbers;
   };
 
+  const setActiveClass = (page: string | number) => {
+    return page === currentPage ? "active" : "link";
+  };
+
   return (
-    <div className={styles.container}>
+    <div className="pagination__container">
       {getPageNumbers().map((page) => (
-        <Link key={page} href={`/?page=${page}`}>
+        <Link
+          key={page}
+          href={`/?page=${page}`}
+          className={`link ${setActiveClass(page)}`}
+        >
           {page}
         </Link>
       ))}
     </div>
   );
-
-  // Вариант через кнопки и роут
-  // const router = useRouter();
-  // const isPrevDisabled = currentPage === 1
-  // const isNextDisabled = next === undefined;
-  // return (
-  //   <div className={styles.container}>
-  //     <button
-  //       className={styles.button}
-  //       disabled={isPrevDisabled}
-  //       onClick={() => router.push(`?page=${currentPage - 1}`)}
-  //     >
-  //       Prev
-  //     </button>
-  //     {currentPage}
-  //     <button
-  //       className={styles.button}
-  //       disabled={isNextDisabled}
-  //       onClick={() => router.push(`?page=${currentPage + 1}`)}
-  //     >
-  //       Next
-  //     </button>
-  //   </div>
-  // );
 };
 
 export default Pagination;

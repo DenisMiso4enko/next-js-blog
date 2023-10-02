@@ -5,6 +5,8 @@ interface PostDetailsProps {
   data: IPost;
 }
 
+// TODO: Сделать верстку страницы с польной инфомацией о посте
+
 export const PostDetails = ({ data }: PostDetailsProps) => {
   return <div></div>;
 };
