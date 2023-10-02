@@ -20,16 +20,14 @@ export default async function Home({ searchParams }: any) {
   const page = parseInt(searchParams.page) || 1;
   const query = searchParams.search || "";
 
-  const { totalPages, next, results, currentPage } = await getData(page, query);
+  const { totalPages, results, currentPage } = await getData(page, query);
 
   return (
     <main>
       <h1 className={styles.title}>Recent Posts</h1>
       <div className={styles.content}>
         <Posts
-          page={page}
           totalPages={totalPages}
-          next={next}
           results={results}
           currentPage={currentPage}
           query={query}

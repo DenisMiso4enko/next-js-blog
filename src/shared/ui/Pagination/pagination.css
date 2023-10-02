@@ -1,0 +1,19 @@
+.pagination__container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.link {
+  background-color: var(--color-blue);
+  color: #fff;
+  border-radius: var(--radius-8);
+  padding: 4px 8px;
+}
+
+.active {
+  background-color: var(--color-blue-700);
+  color: var(--color-blue);
+}

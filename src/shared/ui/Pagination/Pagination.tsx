@@ -1,12 +1,13 @@
-import styles from "./pagination.module.css";
+import "./pagination.css";
 import Link from "next/link";
 
-const Pagination = ({ currentPage, totalPages, next, query }: any) => {
-  // // вариант через ссылки
-  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+  query: string;
+}
 
-  const pageNumbers: Array<number | string> = [];
-
+const Pagination = ({ currentPage, totalPages, query }: PaginationProps) => {
   const getPageNumbers = (): Array<number | string> => {
     const pageNumbers: Array<number | string> = [];
 
@@ -41,10 +42,12 @@ const Pagination = ({ currentPage, totalPages, next, query }: any) => {
     return pageNumbers;
   };
 
-  // href={`/?page=${page}&search=${query}`}
+  const setActiveClass = (page: string | number) => {
+    return page === currentPage ? "active" : "link";
+  };
 
   return (
-    <div className={styles.container}>
+    <div className="pagination__container">
       {getPageNumbers().map((page) => (
         <Link
           key={page}
@@ -55,6 +58,7 @@ const Pagination = ({ currentPage, totalPages, next, query }: any) => {
               search: query,
             },
           }}
+          className={`link ${setActiveClass(page)}`}
         >
           {page}
         </Link>

@@ -4,13 +4,19 @@ import PostCard from "@/src/shared/ui/PostCard/PostCard";
 import { IPost } from "@/src/entities/Post/model/types/post";
 import Pagination from "@/src/shared/ui/Pagination/Pagination";
 
+interface PostsProps {
+  totalPages: number;
+  results: IPost[];
+  currentPage: number;
+  query: string;
+}
+
 const Posts = async ({
   totalPages,
-  next,
   results,
   currentPage,
   query,
-}: any) => {
+}: PostsProps) => {
   return (
     <div className={styles.posts}>
       {results?.map((post: IPost) => <PostCard key={post._id} data={post} />)}
@@ -19,7 +25,6 @@ const Posts = async ({
           query={query}
           currentPage={currentPage}
           totalPages={totalPages}
-          next={next}
         />
       </div>
     </div>

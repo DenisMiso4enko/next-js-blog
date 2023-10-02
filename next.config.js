@@ -7,11 +7,9 @@ const nextConfig = {
       "vgr.by",
       "media.cnn.com",
       "hips.hearstapps.com",
+      "content.onliner.by",
     ],
   },
-  // experimental: {
-  //   serverActions: true,
-  // },
 };
 
 module.exports = nextConfig;

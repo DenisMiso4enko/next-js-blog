@@ -6,7 +6,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useDebounce } from "use-debounce";
 
-export const Sidebar = ({ search: searchQuery }: { search?: string }) => {
+interface SidebarProps {
+  search?: string;
+}
+
+export const Sidebar = ({ search: searchQuery }: SidebarProps) => {
   const [text, setText] = useState(searchQuery);
   const router = useRouter();
   const [query] = useDebounce(text, 700);
