@@ -18,6 +18,7 @@ const Page = async ({ params }: any) => {
   return (
     <>
       <PostDetails data={data} />
+      <div>Comments</div>
     </>
   );
 };

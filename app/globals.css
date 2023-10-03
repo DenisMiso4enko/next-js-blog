@@ -1,33 +1,41 @@
 :root {
-    --color-blue: #007bff;
-    --color-blue-light: #0090ff;
-    --color-blue-500: #269AD4;
-    --color-blue-700: #D4EBF6;
-    --color-gray: #808080FF;
-    --color-red: #ec0b0b;
+  --background: white;
+  --foreground: black;
 
-    --radius-8: 8px;
+  --color-blue: #007bff;
+  --color-blue-light: #0090ff;
+  --color-blue-500: #269ad4;
+  --color-blue-700: #d4ebf6;
+  --color-gray: #808080ff;
+  --color-red: #ec0b0b;
 
-    --input-font: 20px;
+  --radius-8: 8px;
+
+  --input-font: 20px;
+}
+
+[data-theme="dark"] {
+  --background: black;
+  --foreground: white;
 }
 
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
- }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
- a {
-   color: inherit;
-   text-decoration: none;
- }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
- .container {
-     max-width: 1200px;
-     margin: 0 auto;
-     padding: 0 20px;
- }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
- body {
-     min-height: 100vh;
- }
+body {
+  min-height: 100vh;
+}

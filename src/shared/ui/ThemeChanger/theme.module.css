@@ -1,0 +1,19 @@
+.sun,
+.moon {
+  width: 28px;
+  height: 28px;
+}
+
+.sun {
+  color: orange;
+}
+
+.moon {
+  color: slategray;
+}
+
+.button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
