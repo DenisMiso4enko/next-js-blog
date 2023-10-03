@@ -7,7 +7,7 @@ interface TagsInputProps {
   onChangeTags: (tags: any) => void;
 }
 
-const TagsInput = memo((props: TagsInputProps) => {
+const TagsInput = (props: TagsInputProps) => {
   const { tags, onChangeTags } = props;
   const [inputValue, setInputValue] = useState("");
 
@@ -45,6 +45,6 @@ const TagsInput = memo((props: TagsInputProps) => {
       />
     </div>
   );
-});
+};
 
-export default TagsInput;
+export default memo(TagsInput);

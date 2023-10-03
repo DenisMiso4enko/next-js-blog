@@ -1,7 +1,7 @@
 "use client";
 import styles from "./sidebar.module.css";
 import Input from "@/src/shared/ui/Input/Input";
-import React, { memo, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useDebounce } from "use-debounce";
 
@@ -9,7 +9,7 @@ interface SidebarProps {
   search?: string;
 }
 
-export const Sidebar = memo(({ search: searchQuery }: SidebarProps) => {
+export const Sidebar = ({ search: searchQuery }: SidebarProps) => {
   const [text, setText] = useState(searchQuery);
   const router = useRouter();
   const [query] = useDebounce(text, 700);
@@ -45,4 +45,4 @@ export const Sidebar = memo(({ search: searchQuery }: SidebarProps) => {
       </div>
     </div>
   );
-});
+};

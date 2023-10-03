@@ -6,7 +6,7 @@ import Input from "@/src/shared/ui/Input/Input";
 import styles from "./createpost.module.css";
 import Button from "@/src/shared/ui/Button/Button";
 
-export const CreatePost = memo(() => {
+export const CreatePost = () => {
   const {
     title,
     setTitle,
@@ -69,4 +69,4 @@ export const CreatePost = memo(() => {
       </form>
     </div>
   );
-});
+};

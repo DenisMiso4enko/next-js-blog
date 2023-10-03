@@ -3,7 +3,7 @@ import { useSession, signOut } from "next-auth/react";
 import Image from "next/image";
 import { memo } from "react";
 
-const Profile = memo(() => {
+const Profile = () => {
   const session = useSession();
   return (
     <>
@@ -19,6 +19,6 @@ const Profile = memo(() => {
       )}
     </>
   );
-});
+};
 
-export default Profile;
+export default memo(Profile);

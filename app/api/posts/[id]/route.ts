@@ -3,7 +3,11 @@ import PostModel from "../../../../src/models/Post";
 import { NextResponse } from "next/server";
 import { NextApiRequest } from "next";
 
-export const GET = async (req: NextApiRequest, { params }: any) => {
+export const GET = async (
+  req: Request,
+  { params }: { params: { id: string } }
+  // @ts-ignore
+): Promise<NextResponse> => {
   const { id } = params;
   try {
     await connectMongoDB();
