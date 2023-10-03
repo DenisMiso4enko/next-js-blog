@@ -1,5 +1,5 @@
 import styles from "./tagsInput.module.css";
-import { ChangeEvent, KeyboardEvent, useState } from "react";
+import { ChangeEvent, KeyboardEvent, memo, useState } from "react";
 import Tag from "@/src/shared/ui/Tag/Tag";
 
 interface TagsInputProps {
@@ -7,7 +7,7 @@ interface TagsInputProps {
   onChangeTags: (tags: any) => void;
 }
 
-const TagsInput = (props: TagsInputProps) => {
+const TagsInput = memo((props: TagsInputProps) => {
   const { tags, onChangeTags } = props;
   const [inputValue, setInputValue] = useState("");
 
@@ -45,6 +45,6 @@ const TagsInput = (props: TagsInputProps) => {
       />
     </div>
   );
-};
+});
 
 export default TagsInput;

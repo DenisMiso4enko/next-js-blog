@@ -9,8 +9,6 @@ interface PostCardProps {
   data: IPost;
 }
 
-
-
 const PostCard = ({ data }: PostCardProps) => {
   return (
     <Link className={styles.container} href={`/posts/${data._id}`}>

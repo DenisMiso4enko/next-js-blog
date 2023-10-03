@@ -1,8 +1,7 @@
 "use client";
-import { useGlobalContext } from "@/app/Context/store";
 import styles from "./sidebar.module.css";
 import Input from "@/src/shared/ui/Input/Input";
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useDebounce } from "use-debounce";
 
@@ -10,7 +9,7 @@ interface SidebarProps {
   search?: string;
 }
 
-export const Sidebar = ({ search: searchQuery }: SidebarProps) => {
+export const Sidebar = memo(({ search: searchQuery }: SidebarProps) => {
   const [text, setText] = useState(searchQuery);
   const router = useRouter();
   const [query] = useDebounce(text, 700);
@@ -46,4 +45,4 @@ export const Sidebar = ({ search: searchQuery }: SidebarProps) => {
       </div>
     </div>
   );
-};
+});

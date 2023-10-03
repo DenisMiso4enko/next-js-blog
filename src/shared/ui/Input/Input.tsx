@@ -13,7 +13,7 @@ interface InputProps {
   required?: boolean;
 }
 
-const Input = (props: InputProps) => {
+const Input = memo((props: InputProps) => {
   const {
     type,
     value,
@@ -33,6 +33,6 @@ const Input = (props: InputProps) => {
       />
     </div>
   );
-};
+});
 
 export default Input;

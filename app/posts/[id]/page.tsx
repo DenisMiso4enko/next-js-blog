@@ -1,3 +1,5 @@
+import { PostDetails } from "@/src/entities/Post";
+
 const getData = async (id: string) => {
   const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     cache: "no-store",
@@ -12,12 +14,11 @@ const getData = async (id: string) => {
 const Page = async ({ params }: any) => {
   const { id } = params;
 
-  // в jsx компонент postDetails
   const data = await getData(id);
   return (
-    <div>
-      <h2>{data.title}</h2>
-    </div>
+    <>
+      <PostDetails data={data} />
+    </>
   );
 };
 

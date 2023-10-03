@@ -1,12 +1,12 @@
 "use client";
 import TagsInput from "@/src/shared/ui/TagsInput/TagsInput";
 import { useCreatePost } from "@/src/shared/lib/hooks/useCreatePost";
-import { ChangeEvent } from "react";
+import { ChangeEvent, memo } from "react";
 import Input from "@/src/shared/ui/Input/Input";
 import styles from "./createpost.module.css";
 import Button from "@/src/shared/ui/Button/Button";
 
-export const CreatePost = () => {
+export const CreatePost = memo(() => {
   const {
     title,
     setTitle,
@@ -69,4 +69,4 @@ export const CreatePost = () => {
       </form>
     </div>
   );
-};
+});

@@ -1,5 +1,5 @@
 import styles from "./button.module.css";
-import { ReactNode, ButtonHTMLAttributes } from "react";
+import { ReactNode, ButtonHTMLAttributes, memo } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
@@ -8,13 +8,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   type?: "submit" | "reset" | "button" | undefined;
 }
 
-const Button = (props: ButtonProps) => {
+const Button = memo((props: ButtonProps) => {
   const { children, className, disabled, type } = props;
   return (
     <button type={type} className={styles.btn}>
       {children}
     </button>
   );
-};
+});
 
 export default Button;

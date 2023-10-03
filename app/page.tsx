@@ -11,7 +11,7 @@ const getData = async (page: any, query: string) => {
     }
   );
   if (!res.ok) {
-    throw new Error("Failed");
+    throw new Error("Failed load posts");
   }
   return res.json();
 };

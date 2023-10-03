@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { IPost } from "@/src/entities/Post/model/types/post";
 import { httpRequestPost } from "../../api/httpRequest";
+import { revalidateTag } from "next/cache";
 
 export const useCreatePost = () => {
   const router = useRouter();
@@ -22,11 +23,13 @@ export const useCreatePost = () => {
         description,
         tags,
         image,
+        userAvatar: session?.data?.user?.image!,
         userId: session?.data?.user?.email!,
         userName: session?.data?.user?.name!,
       };
       const response = await httpRequestPost("/api/create", "POST", fields);
       router.push(`/posts/${response._id}`);
+      revalidateTag("posts");
     } catch (error) {
       console.error("Request failed:", error);
     }

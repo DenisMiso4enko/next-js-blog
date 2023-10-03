@@ -9,6 +9,7 @@ const schema = new Schema(
     description: String,
     text: String,
     image: String,
+    userAvatar: String,
     // likes: [{ type: Schema.Types.ObjectId, ref: "User" }],  // если работать с likes из БД
     // dislikes: [{ type: String, ref: "User" }],
     views: { type: Number, default: 0 },

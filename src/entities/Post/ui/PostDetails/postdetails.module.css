@@ -1,0 +1,57 @@
+.details {
+    position: relative;
+}
+
+.imageContainer {
+    flex: 1;
+    height: 400px;
+    position: relative;
+}
+
+.image {
+    object-fit: cover;
+}
+
+.content {
+    position: absolute;
+    top: 86%;
+    left: 50%;
+    right: 50%;
+    transform: translatex(-50%);
+    background: white;
+    width: 90%;
+    padding: 40px;
+
+}
+
+.creator {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    border-radius: 50%;
+}
+
+.userName {
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.date {
+    font-size: 16px;
+}
+
+.title {
+    font-size: 46px;
+    margin-bottom: 10px;
+}
+
+.description {
+    margin-bottom: 40px;
+}
+
+.text {
+    line-height: 24px;
+}

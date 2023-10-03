@@ -19,6 +19,7 @@ const linksData = [
 
 export const Navbar = () => {
   const session = useSession();
+  const userName = session?.data?.user?.name;
   return (
     <nav className={styles.navbar}>
       {linksData.map((link) => (
@@ -29,7 +30,7 @@ export const Navbar = () => {
       {session?.data && <Link href={"/create"}>Create</Link>}
       {session?.data ? (
         <Link href={"/profile"} className={styles.user}>
-          UU
+          {userName && userName[0]}
         </Link>
       ) : (
         <Link href={"/api/auth/signin"} className={styles.linkIcon}>

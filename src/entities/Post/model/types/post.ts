@@ -10,4 +10,5 @@ export interface IPost {
   _id?: string;
   createdAt?: string;
   updatedAt?: string;
+  userAvatar?: string;
 }

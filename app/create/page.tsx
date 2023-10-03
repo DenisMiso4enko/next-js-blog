@@ -1,5 +1,5 @@
 import { CreatePost } from "@/src/entities/Post";
-import {Metadata} from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Create New Post",
@@ -7,11 +7,7 @@ export const metadata: Metadata = {
 };
 
 const Create = () => {
-  return (
-    <>
-      <CreatePost />
-    </>
-  );
+  return <CreatePost />;
 };
 
 export default Create;
