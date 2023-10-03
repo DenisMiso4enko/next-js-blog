@@ -1,6 +1,7 @@
-import styles from "./postdetails.module.css";
 import { IPost } from "@/src/entities/Post/model/types/post";
 import Image from "next/image";
+import { formattedDate } from "@/src/shared/lib/utils/formattedDate";
+import styles from "./postdetails.module.css";
 
 interface PostDetailsProps {
   data: IPost;
@@ -21,13 +22,6 @@ export const PostDetails = ({ data }: PostDetailsProps) => {
     updatedAt,
     createdAt,
   } = data;
-
-  const formattedDate = (createdAt: string) => {
-    const options = { year: "numeric", month: "short", day: "numeric" };
-    const date = new Date(createdAt);
-    // @ts-ignore
-    return date.toLocaleDateString("en-US", options);
-  };
 
   const setUserImage = userAvatar ? userAvatar : userName[0];
 
