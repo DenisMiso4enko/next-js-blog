@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { FiLogIn } from "react-icons/fi";
 import styles from "./navbar.module.css";
+import { ThemeChanger } from "@/src/shared/ui/ThemeChanger/ThemeChanger";
 
 const linksData = [
   {
@@ -37,6 +38,8 @@ export const Navbar = () => {
           Login <FiLogIn />
         </Link>
       )}
+
+      <ThemeChanger />
     </nav>
   );
 };
